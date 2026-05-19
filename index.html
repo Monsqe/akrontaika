@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akron Taika ry — akrontaikary.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --accent: #c8372d;
+      --gold: #b8860b;
+      --bg: #f7f4ee;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --border: #ddd8cc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Top stripe */
+    .stripe {
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+    }
+
+    header {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 32px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .org-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .domain-tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    /* Mission block */
+    .mission-block {
+      margin-bottom: 48px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .mission-fi {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      line-height: 1.7;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    .mission-en {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      padding-left: 27px;
+      font-style: italic;
+    }
+
+    /* Details card */
+    .details-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0;
+    }
+
+    .detail-row {
+      display: contents;
+    }
+
+    .detail-row .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .detail-row .value {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+      padding: 10px 0 10px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .detail-row:last-child .label,
+    .detail-row:last-child .value {
+      border-bottom: none;
+    }
+
+    .detail-row .value a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .detail-row .value a:hover {
+      text-decoration: underline;
+    }
+
+    /* Ownership statement */
+    .ownership-box {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 4px;
+      padding: 36px 40px;
+      margin-bottom: 48px;
+    }
+
+    .ownership-box .section-eyebrow {
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .ownership-fi {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #f0ece4;
+      margin-bottom: 14px;
+    }
+
+    .ownership-en {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #a0a0b8;
+      font-style: italic;
+    }
+
+    /* Registration note */
+    .registration-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+
+    .registration-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .registration-note a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-wrap {
+      margin-bottom: 28px;
+    }
+
+    .logo-wrap img {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    footer {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 32px 40px;
+      font-size: 0.78rem;
+      color: var(--muted
+      );
+    
+    }
+
+    @media (max-width: 520px) {
+      header, main, footer { padding-left: 20px; padding-right: 20px; }
+      .details-card, .ownership-box { padding: 24px 20px; }
+      .details-grid { grid-template-columns: 120px 1fr; }
+      .detail-row .value { padding-left: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<header>
+  <div class="logo-wrap"><img src="data:image/jpeg;base64,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" alt="Akron Taika ry logo" /></div>
+  <p class="org-label">Rekisteröity yhdistys / Registered association</p>
+  <h1>Akron Taika ry</h1>
+  <span class="domain-tag">akrontaikary.com</span>
+</header>
+
+<main>
+
+  <!-- Mission -->
+  <section class="mission-block">
+    <p class="section-eyebrow">Tarkoitus / Mission</p>
+    <p class="mission-fi">
+      Yhdistyksen tarkoituksena on edistää ja kehittää voimistelu- ja liikuntaharrastusta Pirkkalassa ja sen lähikunnissa.
+    </p>
+  </section>
+
+  <!-- Registered details -->
+  <section class="details-card">
+    <p class="section-eyebrow">Rekisteritiedot / Registered Details</p>
+    <div class="details-grid">
+
+      <div class="detail-row">
+        <span class="label">Nimi / Name</span>
+        <span class="value">Akron Taika ry</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Y-tunnus / Reg. no.</span>
+        <span class="value">3266378-1</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Kotipaikka / Domicile</span>
+        <span class="value">Pirkkala, Finland</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Osoite / Address</span>
+        <span class="value">Jasperintie 301, 33960 Pirkkala, Finland</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ownership statement -->
+  <section class="ownership-box">
+    <p class="section-eyebrow">Omistajuusilmoitus / Domain Ownership Statement</p>
+    <p class="ownership-fi">
+      Verkkotunnus <strong>akrontaikary.com</strong> on rekisteröity yhdistyksen Akron Taika ry (Y-tunnus 3266378-1) käyttöön ja hallinnoimana. Yhdistys vastaa tämän verkkotunnuksen sisällöstä ja käytöstä.
+    </p>
+    <p class="ownership-en">
+      The domain <strong>akrontaikary.com</strong> is owned and operated exclusively by Akron Taika ry (Business ID: 3266378-1), a registered association under Finnish law. This association is solely responsible for the content and use of this domain.
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; Akron Taika ry — akrontaikary.com
+</footer>
+
+</body>
+</html>
